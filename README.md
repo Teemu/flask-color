@@ -3,7 +3,14 @@ Flask-Color
 
 ![](http://i.imgur.com/u5tLLho.png)
 
-Colors the requests in debugging mode. Unnecessary clutter such as time or IP are not visible.
+flask-color is an extension for Flask that improves the built-in web server with colors when debugging. Unnecessary clutter such as time or IP are hidden.
+
+Installing
+----------
+
+You can install this using pip.
+
+````$ pip install flask-color````
 
 How to use
 ----------
