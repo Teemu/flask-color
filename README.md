@@ -32,3 +32,4 @@ Configuration
 
 - *COLOR_ALWAYS_ON*: Force extension on even if not in DEBUG mode
 - *COLOR_PATTERN_GRAY*: Regular expression that matches static file requests (these requests are marked with gray color)
+- *COLOR_PATTERN_HIDE*: Hides requests that match this regular expression.

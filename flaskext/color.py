@@ -34,6 +34,7 @@ def init_app(app):
         'COLOR_PATTERN_GRAY',
         r'^/(static|assets|img|js|css)/(.*)|favicon\.ico|(.*)\.(png|jpeg|jpg|gif|css)$'
     )
+    hidePattern = app.config.get('COLOR_PATTERN_HIDE', r'/^$/')
     WSGIRequestHandler = werkzeug.serving.WSGIRequestHandler
     
     def log_request(self, code='-', size='-'):
@@ -46,6 +47,9 @@ def init_app(app):
             statusColor = TerminalColors.FAIL
         else:
             statusColor = TerminalColors.GRAY
+
+        if re.search(hidePattern, url):
+            return
 
         print (
             "%(statusColor)s%(status)s%(colorEnd)s "
