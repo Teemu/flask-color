@@ -8,7 +8,7 @@ setup(
     license='MIT',
     author='Frozenball',
     author_email='orkkiolento@gmail.com',
-    description='Colors the requests in debugging mode',
+    description='flask-color is an extension for Flask that improves the built-in web server with colors when debugging. Unnecessary clutter such as time or IP are hidden.',
     long_description=__doc__,
     packages=['flaskext'],
     namespace_packages=['flaskext'],
