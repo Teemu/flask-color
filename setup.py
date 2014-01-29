@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='Flask-Color',
-    version='0.1',
+    version='0.2',
     url='https://github.com/Frozenball/flask-color',
     license='MIT',
     author='Frozenball',
