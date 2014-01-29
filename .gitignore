@@ -1,1 +1,3 @@
 *.pyc
+Flask_Color.egg-info/
+dist/
