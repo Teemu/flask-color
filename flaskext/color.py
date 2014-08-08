@@ -51,24 +51,15 @@ def init_app(app):
         if re.search(hidePattern, url):
             return
 
-        print (
-            "%(statusColor)s%(status)s%(colorEnd)s "
-            "%(methodColor)s%(method)s%(colorEnd)s "
-            "%(urlColor)s%(url)s%(colorEnd)s"
-        ) % {
-            'status': code,
-            'method': method,
-            'url': url,
-            'statusColor': statusColor,
-            'colorEnd': TerminalColors.ENDC,
-            'methodColor': (
-                TerminalColors.GRAY if method == 'GET' else TerminalColors.ENDC
-            ),
-            'urlColor': (
-                TerminalColors.LITTLEGRAY
-                if re.search(staticPattern, url) else TerminalColors.ENDC
-            )
-        }
+        print("{statusColor}{status}{colorEnd} {methodColor}{method}{colorEnd} {urlColor}{url}{colorEnd}".format(
+            status=code,
+            method=method,
+            url=url,
+            statusColor=statusColor,
+            colorEnd=TerminalColors.ENDC,
+            methodColor=TerminalColors.GRAY if method == 'GET' else TerminalColors.ENDC,
+            urlColor=TerminalColors.LITTLEGRAY if re.search(staticPattern, url) else TerminalColors.ENDC
+        ))
 
     WSGIRequestHandler.log_request = log_request
     werkzeug.serving.WSGIRequestHandler = WSGIRequestHandler
